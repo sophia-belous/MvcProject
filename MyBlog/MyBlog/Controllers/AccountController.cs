@@ -1,4 +1,5 @@
 ﻿using MyBlog.Models;
+using MyBlog.Models.AccountModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

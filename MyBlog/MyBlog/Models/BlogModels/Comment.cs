@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MyBlog.Models
+namespace MyBlog.Models.BlogModels
 {
     public class Comment
     {
@@ -14,5 +14,6 @@ namespace MyBlog.Models
         public string Email { get; set; }
         public string Body { get; set; }
 
+        public virtual Post Post { get; set; }
     }
 }

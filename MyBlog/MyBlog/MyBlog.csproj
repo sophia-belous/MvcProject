@@ -133,12 +133,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\Login.cs" />
-    <Compile Include="Models\Post.cs" />
-    <Compile Include="Models\PostTag.cs" />
-    <Compile Include="Models\Register.cs" />
-    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Migrations\201505102130085_InitialCreate.cs" />
+    <Compile Include="Migrations\201505102130085_InitialCreate.Designer.cs">
+      <DependentUpon>201505102130085_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505110035580_Migr.cs" />
+    <Compile Include="Migrations\201505110035580_Migr.Designer.cs">
+      <DependentUpon>201505110035580_Migr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountModels\Login.cs" />
+    <Compile Include="Models\AccountModels\Register.cs" />
+    <Compile Include="Models\AccountModels\UserProfile.cs" />
+    <Compile Include="Models\BlogginDbContext.cs" />
+    <Compile Include="Models\BlogModels\Comment.cs" />
+    <Compile Include="Models\BlogModels\Post.cs" />
+    <Compile Include="Models\BlogModels\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,7 +194,14 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505102130085_InitialCreate.resx">
+      <DependentUpon>201505102130085_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505110035580_Migr.resx">
+      <DependentUpon>201505110035580_Migr.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
