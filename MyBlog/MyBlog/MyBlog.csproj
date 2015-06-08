@@ -129,17 +129,23 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505102130085_InitialCreate.cs" />
-    <Compile Include="Migrations\201505102130085_InitialCreate.Designer.cs">
-      <DependentUpon>201505102130085_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201505202126052_Initial.cs" />
+    <Compile Include="Migrations\201505202126052_Initial.Designer.cs">
+      <DependentUpon>201505202126052_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505110035580_Migr.cs" />
-    <Compile Include="Migrations\201505110035580_Migr.Designer.cs">
-      <DependentUpon>201505110035580_Migr.cs</DependentUpon>
+    <Compile Include="Migrations\201505211832192_Initial1.cs" />
+    <Compile Include="Migrations\201505211832192_Initial1.Designer.cs">
+      <DependentUpon>201505211832192_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505212012519_Initial11.cs" />
+    <Compile Include="Migrations\201505212012519_Initial11.Designer.cs">
+      <DependentUpon>201505212012519_Initial11.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels\Login.cs" />
@@ -147,8 +153,11 @@
     <Compile Include="Models\AccountModels\UserProfile.cs" />
     <Compile Include="Models\BlogginDbContext.cs" />
     <Compile Include="Models\BlogModels\Comment.cs" />
+    <Compile Include="Models\BlogModels\CommentPostModel.cs" />
+    <Compile Include="Models\BlogModels\Like.cs" />
     <Compile Include="Models\BlogModels\Post.cs" />
     <Compile Include="Models\BlogModels\Tag.cs" />
+    <Compile Include="Models\onetomanycascadedeleteconvention.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -193,14 +202,15 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505102130085_InitialCreate.resx">
-      <DependentUpon>201505102130085_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505110035580_Migr.resx">
-      <DependentUpon>201505110035580_Migr.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\Posts\Create.cshtml" />
+    <Content Include="Views\Posts\Delete.cshtml" />
+    <Content Include="Views\Posts\Details.cshtml" />
+    <Content Include="Views\Posts\Edit.cshtml" />
+    <Content Include="Views\Posts\Index.cshtml" />
+    <Content Include="Views\Home\_PostPreview.cshtml" />
+    <Content Include="Views\Posts\ShowComments.cshtml" />
+    <Content Include="Views\Posts\AddComment.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -209,6 +219,18 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505202126052_Initial.resx">
+      <DependentUpon>201505202126052_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505211832192_Initial1.resx">
+      <DependentUpon>201505211832192_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505212012519_Initial11.resx">
+      <DependentUpon>201505212012519_Initial11.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

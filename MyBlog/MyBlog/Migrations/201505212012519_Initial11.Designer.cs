@@ -7,18 +7,18 @@ namespace MyBlog.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Migr : IMigrationMetadata
+    public sealed partial class Initial11 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Migr));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial11));
         
         string IMigrationMetadata.Id
         {
-            get { return "201505110035580_Migr"; }
+            get { return "201505212012519_Initial11"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

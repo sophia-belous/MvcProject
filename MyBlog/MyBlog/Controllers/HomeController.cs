@@ -1,4 +1,5 @@
 ﻿using MyBlog.Models;
+using MyBlog.Models.BlogModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,11 @@ namespace MyBlog.Controllers
 {
     public class HomeController : Controller
     {
+        private BloggingDbContext db = new BloggingDbContext();
 
         public ActionResult Index()
         {
-            return View();
+            return View(db.Posts.ToList());
         }
 
         [Authorize(Roles = "Admin")]
@@ -30,5 +32,7 @@ namespace MyBlog.Controllers
 
             return View();
         }
+
+        //Dispose
     }
 }

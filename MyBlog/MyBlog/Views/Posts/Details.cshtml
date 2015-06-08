@@ -1,0 +1,68 @@
+﻿@model MyBlog.Models.BlogModels.CommentPostModel
+@using MyBlog.Models
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.Body)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.Body)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.ImgUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.ImgUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post.VideoUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post.VideoUrl)
+        </dd>
+
+    </dl>
+
+    @Html.Action("Create", "Comments", new { postId = Model.Post.PostId});
+    @Html.Partial("ShowComments", Model.Post.Comments)
+
+    @*Form comment*@
+    @*List comments*@
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Post.PostId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -14,6 +14,9 @@ namespace MyBlog.Models.AccountModels
         [Key]
         public int UserId { get; set; }
         public string Username { get; set; }
-        public List<Post> Posts{ get; set; }
+
+        public virtual List<Like> Likes { get; set; }
+        public virtual List<Post> Posts { get; set; }
+        public virtual List<Comment> Comments { get; set; }
     }
 }

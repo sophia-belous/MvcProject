@@ -10,7 +10,6 @@ namespace MyBlog.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "MyBlog.Models.BloggingDbContext";
         }
 
         protected override void Seed(MyBlog.Models.BloggingDbContext context)
@@ -26,7 +25,7 @@ namespace MyBlog.Migrations
             //      new Person { FullName = "Brice Lambson" },
             //      new Person { FullName = "Rowan Miller" }
             //    );
-            // эти миграции удалить можно?без понятия
+            //
         }
     }
 }

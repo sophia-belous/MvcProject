@@ -8,18 +8,15 @@ using System.Web;
 
 namespace MyBlog.Models.BlogModels
 {
-    public class Comment
+    public class Like
     {
         [Key]
-        public int CommentId { get; set; }
-        public int PostId { get; set; }
+        public int LikeId { get; set; }
         public int UserId { get; set; }
-        public DateTime Date { get; set; }
-        [MinLength(150)]
-        public string Body { get; set; }
+        public int PostId { get; set; }
 
-        public virtual Post Post { get; set; }
         [ForeignKey("UserId")]
         public virtual UserProfile User { get; set; }
+        public virtual Post Post { get; set; }
     }
 }
